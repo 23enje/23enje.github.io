@@ -102,7 +102,7 @@
         <span class="column is-narrow">
             
             
-            3분 소요 (약 408 단어)
+            7분 소요 (약 1087 단어)
         </span>
         
     </div>
@@ -120,16 +120,48 @@
 <p align="center">다음과 같이 배치하였습니다.</p><p>
 
 </p><p>이처럼 ‘의미적인 순서’ 즉, ‘논리적인 순서’에 의해 결정된 원소들의 나열을 ‘리스트’라고 합니다. </p>
+<hr>
+
 <h2 id="lt-구현-gt"><a href="#lt-구현-gt" class="headerlink" title="<구현>"></a>&lt;구현&gt;</h2><p>리스트의 구현 방법에는 순차 리스트, 연결 리스트 두 가지가 있습니다.</p>
 <h3 id="순차-리스트-배열을-이용한-리스트의-구현"><a href="#순차-리스트-배열을-이용한-리스트의-구현" class="headerlink" title="순차 리스트(배열을 이용한 리스트의 구현)"></a>순차 리스트(배열을 이용한 리스트의 구현)</h3><p>배열은 물리적인 위치(메모리 주소)를 순서적으로 나열하는 자료구조입니다. 따라서 리스트는 다음과 같이 구현할 수 있습니다.</p>
 <p align="center"><img src="/gallery/Linked_List_example3.drawio.png"></p>
-배열을 이용한 리스트는 포인터에 할당할 메모리가 필요없기 때문에 메모리의 공간 활용 효율이 높습니다.<br>
+배열을 이용한 리스트는 포인터에 할당할 공간이 필요없기 때문에 메모리의 공간 활용 효율이 높습니다.
+<br>
 <br>
 그러나 만약 리스트에 원소값을 삽입 및 삭제한다면 많은 시간이 걸리게 될겁니다. 다음은 그 예시입니다.
 <p align="center"><img src="/gallery/Linked_List_example4.drawio.png"></p>
+1936년에 애국가 작곡이라는 역사적 사건을 리스트에 삽입한다 가정하면 1919년과 1945년 사이에 삽입되어야 합니다. '1919'원소와 '1945'원소 사이에 '1936'원소를 넣기 위해 리스트의 원소값을 하나씩 뒤로 밀어야 하는 상황이 발생합니다.
+<br>
+<br>
+처음 배열 선언시 공간을 충분히 준다면 어느 정도 피할 수 있지만, 충분치 않을시 메모리를 추가 할당하고 모든 원소를 뒤로 밀어야 하기 때문에 프로그램 실행 시간에 악영향을 미칩니다.
+<br>
+<br>
+삭제도 마찬가지입니다. 
+<p align="center"><img src="/gallery/Linked_List_example5.drawio.png"></p>
+다음과 같이 '1936'원소를 삭제하기 위해 모든 원소를 앞으로 당겨야 합니다. 따라서 삽입과 동일하게 프로그램 수행시간을 증가시킵니다.
 
+<h3 id="연결-리스트-포인터를-이용한-리스트의-구현"><a href="#연결-리스트-포인터를-이용한-리스트의-구현" class="headerlink" title="연결 리스트(포인터를 이용한 리스트의 구현)"></a>연결 리스트(포인터를 이용한 리스트의 구현)</h3><p>이러한 배열을 이용한 리스트의 단점은 포인터를 이용하면 보완할 수 있습니다. 리스트의 데이터 요소와 다음 요소를 지시하는 포인터를 합쳐서 노드(node)라 부릅니다.</p>
+<p align="center">다음 그림을 살펴봅시다.</p>
+<p align="center"><img src="/gallery/Linked_List_impl1.drawio.png"></p>
+<p align="center">냉장고 셋째 칸은 아침 식사의 위치를 알려주며 아침 식사 메모에는 거실 TV 앞에 점심 식사가 있음을 알 수 있습니다.</p>
+이 처럼 다음 위치를 알려주는 역할을 포인터라 부릅니다.
+<br>
+<br>
+<p align="center">다음 그림은 포인터를 이용한 리스트로 표현했습니다.</p>
+<p align="center"><img src="/gallery/Linked_List_impl2.drawio.png"></p>
+왼쪽 그림에서 '메모리 주소값'의 데이터는 다음 데이터의 저장 위치를 가집니다. 즉 컴퓨터 메모리에 비교하여 그려 보면 오른쪽과 같습니다.
+<br>
+<br>
+오른쪽 그림에서 왼쪽의 숫자는 메모리 주소입니다. 첫 번째 리스트 원소값인 '1919'를 메모리에서 접근하면 두 번째 리스트 원소값은 1004번지에 저장되어 있음을 알 수 있습니다. 똑같이 동일하게 1004번지의 메모리 주소를 따라가면 '1945'원소값이 저장되어 있고 세 번째 리스트 원소값이 1100번지에 있음을 알 수 있습니다.
+<br>
+<br>
+위의 그림은 실제 메모리에 저장되는 리스트의 모습이며, 프로그래머가 추상화한 리스트의 모습은 다음과 같습니다.
+<p align="center"><img src="/gallery/Linked_List_impl3.drawio.png"></p>
+메모리 주소의 구체적인 값은 시스템에 의해 제공되므로 프로그래머는 리스트에서 주소를 몰라도 됩니다. 즉, 추상화된 리스트의 모습만을 생각해 프로그램을 작성하면 됩니다.
 
-<h3 id="연결-리스트-포인터를-이용한-리스트의-구현"><a href="#연결-리스트-포인터를-이용한-리스트의-구현" class="headerlink" title="연결 리스트(포인터를 이용한 리스트의 구현)"></a>연결 리스트(포인터를 이용한 리스트의 구현)</h3><h2 id="lt-응용-gt"><a href="#lt-응용-gt" class="headerlink" title="<응용>"></a>&lt;응용&gt;</h2></body></html>
+<hr>
+
+<h2 id="lt-응용-gt"><a href="#lt-응용-gt" class="headerlink" title="<응용>"></a>&lt;응용&gt;</h2></body></html>
     
     </div>
     
@@ -141,7 +173,9 @@
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2022/09/30/ProgrammingLanguage/C/Pointer/">포인터 변수 [C Language]</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
