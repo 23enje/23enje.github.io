@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>DNS and how it works? - 23enje&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-coding.css" rel="stylesheet">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                <img src="/images/logo.png" alt="" height="28">
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
+               href="/categories/Documentation">Documentation</a>
+            
+            <a class="navbar-item "
+               href="/tags">Tags</a>
+            
+            <a class="navbar-item "
+               href="/about">About</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            DNS and how it works?
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2022-09-14T13:28:30.000Z" itemprop="datePublished">9월 14 2022</time>
+            
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            23분 소요 (약 3488 단어)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>DNS는 무엇이고 어떻게 작동할까요?</p>
+<span id="more"></span>
+
+<h3 id="DNS란-무엇인가요"><a href="#DNS란-무엇인가요" class="headerlink" title="DNS란 무엇인가요?"></a>DNS란 무엇인가요?</h3><p>DNS(도메인 이름 시스템)는 인터넷의 전화번호부입니다. 인간은 nytimes.com 이나 espn.com 와 같은 도메인 이름을 통해 온라인으로 정보에 액세스합니다. 웹 브라우저는 IP(인터넷 프로토콜) 주소를 통해 상호 작용합니다. DNS는 브라우저가 인터넷 리소스를 로드할 수 있도록 도메인 이름을 IP 주소로 변환합니다.</p>
+<p>인터넷에 연결된 각 장치에는 다른 컴퓨터가 장치를 찾는 데 사용하는 고유한 IP 주소가 있습니다. DNS 서버는 사람이 192.168.1.1(IPV4)과 같은 IP 주소 또는 2400:cb00:2048:1::c629:d7a2(IPv6)와 같은 더 복잡한 최신 영숫자 IP 주소를 암기할 필요가 없습니다.</p>
+<h3 id="DNS는-어떻게-작동할까요"><a href="#DNS는-어떻게-작동할까요" class="headerlink" title="DNS는 어떻게 작동할까요?"></a>DNS는 어떻게 작동할까요?</h3><p>DNS 확인 프로세스에는 호스트 이름(예: <a target="_blank" rel="noopener" href="http://www.example.com)을/">www.example.com)을</a> 컴퓨터 친화적인 IP 주소(예: 192.168.1.1)로 변환하는 작업이 포함됩니다. IP 주소는 인터넷상의 각 장치에 주어지며, 거리 주소가 특정 집을 찾는 데 사용되는 것처럼 해당 주소는 적절한 인터넷 장치를 찾는 데 필요합니다. 사용자가 웹 페이지를 로드하려는 경우 사용자가 웹 브라우저(example.com)에 입력하는 내용과 example.com 웹 페이지를 찾는 데 필요한 기계 친화적인 주소 간에 변환이 이루어져야 합니다.</p>
+<p>DNS 확인 프로세스를 이해하려면 DNS 쿼리가 전달해야 하는 다양한 하드웨어 구성요소에 대해 알아보는 것이 중요합니다. 웹 브라우저의 경우 DNS 조회는 “백그라운드에서” 발생하며 초기 요청 외에는 사용자의 컴퓨터와의 상호 작용이 필요하지 않습니다.</p>
+<h3 id="웹-페이지-로드와-관련된-4개의-DNS-서버가-있습니다"><a href="#웹-페이지-로드와-관련된-4개의-DNS-서버가-있습니다" class="headerlink" title="웹 페이지 로드와 관련된 4개의 DNS 서버가 있습니다."></a>웹 페이지 로드와 관련된 4개의 DNS 서버가 있습니다.</h3><ul>
+<li>DNS recursor - 리커서는 도서관의 어딘가에 특정 책을 찾으러 가라는 요청을 받는 사서로 생각할 수 있습니다. DNS 리커서는 웹 브라우저와 같은 응용 프로그램을 통해 클라이언트 시스템에서 쿼리를 수신하도록 설계된 서버입니다. 일반적으로 리커서는 클라이언트의 DNS 쿼리를 충족하기 위해 추가 요청을 담당합니다.</li>
+<li>Root nameserver - 루트 서버는 사람이 읽을 수 있는 호스트 이름을 IP 주소로 변환하는 첫 번째 단계입니다. 그것은 책의 다른 랙을 가리키는 도선관의 색인처럼 생각할 수 있습니다.</li>
+<li>TLD nameserver - 최상위 도메인 서버는 라이브러리의 특성 서적 랙으로 간주할 수 있습니다. 이 네임서버는 특정 IP 주소를 검색하는 다음 단계이며 호스트 이름의 마지막 부분을 호스팅합니다(example.com 에서 TLD 서버는 “com”임).</li>
+<li>Authoritative nameserver - 이 최종 서버는 특정 이름을 정의로 번역 할 수 있는 책 랙의 사전으로 생각할 수 있습니다. 신뢰할 수 있는 네임서버는 네임서버 쿼리의 마지막 중지입니다. 권한 있는 이름 서버가 요청된 레코드에 액세스할 수 있는 경우 요청된 호스트 이름의 IP 주소를 초기 요청을 수행한 DNS 리커서(도서관 사서)에게 다시 반환합니다.</li>
+</ul>
+<h3 id="신뢰할-수-있는-DNS-서버와-재귀-DNS-확인자-resolver-의-차이점은-무엇인가요"><a href="#신뢰할-수-있는-DNS-서버와-재귀-DNS-확인자-resolver-의-차이점은-무엇인가요" class="headerlink" title="신뢰할 수 있는 DNS 서버와 재귀 DNS 확인자(resolver)의 차이점은 무엇인가요?"></a>신뢰할 수 있는 DNS 서버와 재귀 DNS 확인자(resolver)의 차이점은 무엇인가요?</h3><p>두 개념 모두 DNS 인프라에 필수적인 서버를 의미하지만 각각 다른 역할을 수행하고 DNS 쿼리의 파이프라인 내에서 서로 다른 위치에 있습니다. 차이점에 대해 생각하는 한 가지 방법은 재귀 확인자가 DNS 쿼리의 시작 부분에 있고 신뢰할 수 있는 네임 서버가 끝에 있다는 것입니다.</p>
+<h2 id="재귀-DNS-확인자-resolver"><a href="#재귀-DNS-확인자-resolver" class="headerlink" title="재귀 DNS 확인자(resolver)"></a>재귀 DNS 확인자(resolver)</h2><p>재귀 확인자는 클라이언트의 재귀 요청에 응답하고 DNS 레코드를 추적하는데 시간이 걸리는 컴퓨터입니다. 요청된 레코드에 대한 신뢰할 수 있는 DNS 이름 서버에 도달할 때까지 일련의 요청을 수행하여 이 작업을 수행합니다. 다행히도 재귀 DNS 확인자는 클라이언트에 응답하는 데 필요한 레코드를 추적하기 위해 항상 여러 요청을 할 필요는 없습니다. 캐싱은 DNS 조회 초기에 요청된 리소스 레코드를 제공하여 필요한 요청을 단락시키는 데 도움이 되는 데이터 지속성 프로세스입니다.</p>
+<img src="/gallery/dns-record-request-sequence-1.png" class="">
+<h6 id="DNS-Record-Request-Sequence"><a href="#DNS-Record-Request-Sequence" class="headerlink" title="DNS Record Request Sequence"></a>DNS Record Request Sequence</h6><h2 id="신뢰할-수-있는-DNS-서버"><a href="#신뢰할-수-있는-DNS-서버" class="headerlink" title="신뢰할 수 있는 DNS 서버"></a>신뢰할 수 있는 DNS 서버</h2><p>간단히 말해, 신뢰할 수 있는 DNS 서버는 실제로 DNS 리소스 레코드를 보유하고 이를 담당하는 서버입니다. 이것은 쿼리 된 리소스 레코드로 응답하는 DNS 조회 체인의 맨 아래에 있는 서버로, 궁극적으로 웹 브라우저가 웹 사이트 또는 기타 웹 리소스에 액세스하는 데 필요한 IP 주소에 도달하도록 요청할 수 있습니다. 신뢰할 수 있는 네임서버는 특정 DNS 레코드에 대한 진실의 최종 원본이므로 다른 원본을 쿼리할 필요 없이 자체 데이터에서 쿼리를 충족할 수 있습니다.</p>
+<img src="/gallery/dns-record-request-sequence-2.png" class="">
+<h6 id="DNS-Record-Request-Sequence-1"><a href="#DNS-Record-Request-Sequence-1" class="headerlink" title="DNS Record Request Sequence"></a>DNS Record Request Sequence</h6><h3 id="DNS-조회의-단계는-무엇인가요"><a href="#DNS-조회의-단계는-무엇인가요" class="headerlink" title="DNS 조회의 단계는 무엇인가요?"></a>DNS 조회의 단계는 무엇인가요?</h3><p>대부분의 경우 DNS는 도메인 이름이 적절한 IP 주소로 변환되는 것과 관련이 있습니다. 이 프로세스의 작동 방식을 알아보려면 웹 브라우저에서 DNS 조회 프로세스를 거쳐 다시 이동할 때 DNS 조회의 경로를 따르는 것이 도움이 됩니다.</p>
+<h2 id="DNS-조회의-8-단계"><a href="#DNS-조회의-8-단계" class="headerlink" title="DNS 조회의 8 단계"></a>DNS 조회의 8 단계</h2><ol>
+<li>사용자가 웹 브라우저에 ‘example.com’을 입력하면 쿼리가 인터넷으로 이동하여 DNS 재귀 확인자가 수신합니다.</li>
+<li>그런 다음 확인자는 DNS 루트 네임서버(.)를 쿼리합니다.</li>
+<li>그런 다음 루트 서버는 해당 도메인에 대한 정보를 저장하는 TLD DNS 서버(예: .com 또는 .net)의 주소로 확인자에게 응답합니다. example.com을 검색할 때 우리의 요청은 .com TLD를 가리킵니다.</li>
+<li>그런 다음 확인자는는 .com TLD에 요청합니다</li>
+<li>TLD 서버는 도메인의 네임서버 example.com의 IP 주소로 응답합니다.</li>
+<li>마지막으로 재귀 확인자는 도메인의 네임 서버에 쿼리를 보냅니다.</li>
+<li>example.com의 IP 주소가 네임서버에서 확인자로 리턴합니다.</li>
+<li>그런 다음 DNS 확인자는 처음에 요청된 도메인의 IP 주소로 웹 브라우저에 응답합니다.</li>
+</ol>
+<p>DNS 조회의 8 단계가 example.com의 IP 주소를 반환하면 브라우저는 웹 페이지에 다음 요청을 할 수 있습니다.<br>9. 브라우저는 IP 주소에 HTTP 요청을 합니다.<br>10. 해당 IP의 서버는 브라우저에서 렌더링될 웹페이지를 리턴합니다.</p>
+<img src="/gallery/dns-lookup-diagram.png" class="">
+<h6 id="Complete-DNS-Lookup-and-Webpage-Query"><a href="#Complete-DNS-Lookup-and-Webpage-Query" class="headerlink" title="Complete DNS Lookup and Webpage Query"></a>Complete DNS Lookup and Webpage Query</h6><h3 id="DNS-확인자란-무엇인가요"><a href="#DNS-확인자란-무엇인가요" class="headerlink" title="DNS 확인자란 무엇인가요?"></a>DNS 확인자란 무엇인가요?</h3><p>DNS 확인자는 DNS 조회의 첫 번째 중지이며 초기 요청을 수행한 클라이언트를 처리하는 역할을 합니다. 확인자는 궁극적으로  URL이 필요한 IP 주소로 변환되는 쿼리 시퀀스를 시작합니다.</p>
+<p>재귀 DNS 쿼리와 재귀 DNS 확인자를 구분하는 것이 중요합니다. 쿼리는 쿼리 확인을 요구하는 DNS 확인자에 대한 요청을 나타냅니다. DNS 재귀 확인자는 재귀 쿼리를 수락하고 필요한 요청을 수행하여 응답을 처리하는 컴퓨터입니다.</p>
+<img src="/gallery/dns-recursive-query.png" class="">
+<h6 id="DNS-recursive-and-DNS-query"><a href="#DNS-recursive-and-DNS-query" class="headerlink" title="DNS recursive and DNS query"></a>DNS recursive and DNS query</h6><h3 id="DNS-쿼리의-유형은-무엇인가요"><a href="#DNS-쿼리의-유형은-무엇인가요" class="headerlink" title="DNS 쿼리의 유형은 무엇인가요?"></a>DNS 쿼리의 유형은 무엇인가요?</h3><p>일반적인 DNS 조회에서는 세 가지 유형의 쿼리가 발생합니다. 이러한 쿼리의 조합을 사용하면 DNS 확인에 최적화된 프로세스로 이동 거리가 줄어들 수 있습니다. 이상적인 상황에서는 캐시된 레코드 데이터를 사용할 수 있으므로 DNS 이름 서버가 비재귀적 쿼리를 반환할 수 있습니다.</p>
+<h2 id="3가지-유형의-DNS-쿼리"><a href="#3가지-유형의-DNS-쿼리" class="headerlink" title="3가지 유형의 DNS 쿼리"></a>3가지 유형의 DNS 쿼리</h2><ol>
+<li>재귀 쿼리 - 재귀 쿼리에서 DNS 클라이언트는 DNS 서버(일반적으로 DNS 재귀 확인자)가 요청된 리소스 레코드 또는 확인자가 레코드를 찾을 수 없는 경우 오류 메시지로 클라이언트에 응답하도록 요구합니다.</li>
+<li>반복 쿼리 - 이 상황에서 DNS 클라이언트는 DNS 서버가 가능한 최상의 답변을 반환하도록 허용합니다. 쿼리된 DNS 서버가 쿼리 이름과 일치하지 않으면 도메인 네임스페이스의 하위 수준에 대해 권한이 있는 DNS 서버에 대한 조회를 반환합니다. 그런 다음 DNS 클라이언트는 조회 주소에 대한 쿼리를 수행합니다. 이 프로세스는 오류 또는 시간 초과가 발생할 때까지 쿼리 체인 다운의 추가 DNS 서버와 함께 계속됩니다.</li>
+<li>비재귀 쿼리 - 일반적으로 DNS 확인자 클라이언트가 DNS 서버에 레코드에 대한 권한이 있거나 레코드가 캐시 내에 존재하기 때문에 액세스할 수 있는 레코드를 쿼리할 때 이 문제가 발생합니다. 일반적으로 DNS 서버는 추가 대역폭 소비를 방지하고 업스트림 서버에 로드하기 위해 DNS 레코드를 캐시합니다.</li>
+</ol>
+<h3 id="DNS-캐싱이란-무엇인가요-DNS-캐싱은-어디에서-발생할까요"><a href="#DNS-캐싱이란-무엇인가요-DNS-캐싱은-어디에서-발생할까요" class="headerlink" title="DNS 캐싱이란 무엇인가요? DNS 캐싱은 어디에서 발생할까요?"></a>DNS 캐싱이란 무엇인가요? DNS 캐싱은 어디에서 발생할까요?</h3><p>캐싱의 목적은 데이터 요청에 대한 성능과 안정성을 향상시키는 위치에 데이터를 임시로 저장하는 것입니다. DNS 캐싱에는 데이터를 요청하는 클라이언트에 더 가깝게 저장하여 DNS 쿼리를 더 일찍 해결하고 DNS 조회 체인의 추가 쿼리를 피할 수 있으므로 로드 시간을 개선하고 대역폭/CPU 사용량을 줄일 수 있습니다. DNS 데이터는 다양한 위치에 캐시될 수 있으며, 각 위치는 TTL(Time-to-Live)에 의해 결정된 설정된 시간 동안 DNS 레코드를 저장합니다.</p>
+<h3 id="브라우저-DNS-캐싱"><a href="#브라우저-DNS-캐싱" class="headerlink" title="브라우저 DNS 캐싱"></a>브라우저 DNS 캐싱</h3><p>최신 웹 브라우저는 기본적으로 설정된 시간 동안 DNS 레코드를 캐시하도록 설계되었습니다. 여기서 목적은 분명합니다. DNS 캐싱이 웹 브라우저에 가까울수록 캐시를 확인하고 IP 주소에 대한 올바른 요청을 수행하기 위해 더 적은 처리 단계를 수행해야합니다. DNS 레코드에 대한 요청이 이루어지면 브라우저 캐시는 요청된 레코드에 대해 확인된 첫 번째 위치입니다.</p>
+<p>Chrome에서는 chrome://net-internals/#dns 로 이동하여 DNS 캐시의 상태를 확인할 수 있습니다.</p>
+<h3 id="운영-체제-OS-수준-DNS-캐싱"><a href="#운영-체제-OS-수준-DNS-캐싱" class="headerlink" title="운영 체제(OS) 수준 DNS 캐싱"></a>운영 체제(OS) 수준 DNS 캐싱</h3><p>운영 체제 수준 DNS 확인자는 DNS 쿼리가 컴퓨터를 떠나기 전에 두 번째이자 마지막 로컬 중지입니다. 이 쿼리를 처리하도록 설계된 운영 체제 내부의 프로세스를 일반적으로 “스텁 확인자” 또는 DNS 클라이언트라고 합니다. 스텁 해석기가 응용 프로그램에서 요청을 받으면 먼저 자체 캐시를 검사하여 레코드가 있는지 확인합니다. 그렇지 않은 경우 로컬 네트워크 외부의 DNS 쿼리(재귀 플래그가 설정된 상태)를 ISP(인터넷 서비스 공급자) 내부의 DNS 재귀 확인자로 보냅니다.</p>
+<p>ISP 내부의 재귀 확인자가 이전 모든 단계와 마찬가지로 DNS 쿼리를 수신하면 요청된 호스트-IP 주소 변환이 이미 로컬 지속성 계층 내에 저장되어 있는지 확인합니다.</p>
+<p>재귀 해석기에는 캐시에 있는 레코드 유형에 따라 추가 기능도 있습니다.</p>
+<ol>
+<li>확인자에 A 레코드가 없지만 신뢰할 수 있는 네임서버에 대한 NS 레코드가 있는 경우 DNS 쿼리의 여러 단계를 우회하여 해당 이름 서버를 직접 쿼리합니다. 이 바로 가기는 루트 및 .com 이름 서버(example.com 검색)에서 조회를 방지하고 DNS 쿼리의 확인이 더 빠르게 수행되도록 도와줍니다.</li>
+<li>확인자에게 NS 레코드가 없는 경우 TLD 서버(이 경우 .com)에 쿼리를 보내 루트 서버를 건너뜁니다.</li>
+<li>드물게 해석기가 TLD 서버를 가리키는 레코드를 가지고 있지 않은 경우 루트 서버를 쿼리합니다. 이 이벤트는 일반적으로 DNS 캐시가 제거된 후에 발생합니다.<br>출처: <a target="_blank" rel="noopener" href="https://www.cloudflare.com/learning/dns/what-is-dns/">https://www.cloudflare.com/learning/dns/what-is-dns/</a></li>
+</ol>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Backend-Roadmap-DNS/">#Backend-Roadmap, DNS</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2022/09/15/Backend-Roadmap/what-is-a-domain-name/">What is a Domain Name?</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2022/09/13/Backend-Roadmap/browsers-and-how-they-work/">Browsers and how they work?</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2022 23enje&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("ko");
+</script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+</body>
+</html>
