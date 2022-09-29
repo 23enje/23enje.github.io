@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>목록: 2022/9 - 23enje&#39;s blog</title>
+<title>연결 리스트(Linked List) - 23enje&#39;s blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -85,52 +85,77 @@
 
     <section class="section">
     <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            연결 리스트(Linked List)
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <time datetime="2022-09-29T11:21:16.000Z" itemprop="datePublished">9월 29 2022</time>
+            
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            3분 소요 (약 408 단어)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>연결 리스트는 무엇인가요?</p>
+<span id="more"></span>
+
+<h2 id="lt-개념-gt"><a href="#lt-개념-gt" class="headerlink" title="<개념>"></a>&lt;개념&gt;</h2><p>리스트는 일상에서 ‘물품이나 사람의 이름 따위를 일정한 순서로 적어 놓은 것’이라 정의 됩니다. 순서대로 나열하는 점에서 배열과 의미가 비슷하지만 배열은 메모리 공간에서의 물리적인 위치를 순서적으로 나타내는 반면 리스트는 물리적인 순서가 아닌 논리적인 순서를 의미합니다.</p>
+<p align="center">예를 들어 다음과 같은 역사적인 사건을</p><p>
+</p><p align="center"><img src="/gallery/Linked_List_example1.drawio.png"></p>
+
+<p align="center">시간적인 순서대로 나열하여</p><p>
+</p><p align="center"><img src="/gallery/Linked_List_example2.drawio.png"></p>
+<p align="center">다음과 같이 배치하였습니다.</p><p>
+
+</p><p>이처럼 ‘의미적인 순서’ 즉, ‘논리적인 순서’에 의해 결정된 원소들의 나열을 ‘리스트’라고 합니다. </p>
+<h2 id="lt-구현-gt"><a href="#lt-구현-gt" class="headerlink" title="<구현>"></a>&lt;구현&gt;</h2><p>리스트의 구현 방법에는 순차 리스트, 연결 리스트 두 가지가 있습니다.</p>
+<h3 id="순차-리스트-배열을-이용한-리스트의-구현"><a href="#순차-리스트-배열을-이용한-리스트의-구현" class="headerlink" title="순차 리스트(배열을 이용한 리스트의 구현)"></a>순차 리스트(배열을 이용한 리스트의 구현)</h3><p>배열은 물리적인 위치(메모리 주소)를 순서적으로 나열하는 자료구조입니다. 따라서 리스트는 다음과 같이 구현할 수 있습니다.</p>
+<p align="center"><img src="/gallery/Linked_List_example3.drawio.png"></p>
+배열을 이용한 리스트는 포인터에 할당할 메모리가 필요없기 때문에 메모리의 공간 활용 효율이 높습니다.<br>
+<br>
+그러나 만약 리스트에 원소값을 삽입 및 삭제한다면 많은 시간이 걸리게 될겁니다. 다음은 그 예시입니다.
+<p align="center"><img src="/gallery/Linked_List_example4.drawio.png"></p>
+
+
+<h3 id="연결-리스트-포인터를-이용한-리스트의-구현"><a href="#연결-리스트-포인터를-이용한-리스트의-구현" class="headerlink" title="연결 리스트(포인터를 이용한 리스트의 구현)"></a>연결 리스트(포인터를 이용한 리스트의 구현)</h3><h2 id="lt-응용-gt"><a href="#lt-응용-gt" class="headerlink" title="<응용>"></a>&lt;응용&gt;</h2></body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/CS-Data-Structure/">#CS, Data Structure</a></span>
+    
+    </div>
     
     
-        <div class="archive content">
-            <h4 class="title is-4" id="2022">2022</h4>
-            <div class="articles">
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2022-09-29T11:21:16.000Z" itemprop="datePublished">
-                        9월 29</time>
-                    <h6 class="title is-6"><a href="/2022/09/29/ComputerScience/DataStructure/LinkedList/">연결 리스트(Linked List)</a></h6>
-                </div>
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2022-09-29T09:14:07.000Z" itemprop="datePublished">
-                        9월 29</time>
-                    <h6 class="title is-6"><a href="/2022/09/29/ProgrammingLanguage/C/C6011/">NULL 포인터 &#39;value&#39;를 역참조하고 있습니다. [C Language]</a></h6>
-                </div>
+            <a href="/2022/09/29/ProgrammingLanguage/C/C6011/">NULL 포인터 &#39;value&#39;를 역참조하고 있습니다. [C Language]</a>
             
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2022-09-21T14:10:49.000Z" itemprop="datePublished">
-                        9월 21</time>
-                    <h6 class="title is-6"><a href="/2022/09/21/Backend-Roadmap/what-is-hosting/">What is hosting?</a></h6>
-                </div>
-            
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2022-09-15T13:47:33.000Z" itemprop="datePublished">
-                        9월 15</time>
-                    <h6 class="title is-6"><a href="/2022/09/15/Backend-Roadmap/what-is-a-domain-name/">What is a Domain Name?</a></h6>
-                </div>
-            
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2022-09-14T13:28:30.000Z" itemprop="datePublished">
-                        9월 14</time>
-                    <h6 class="title is-6"><a href="/2022/09/14/Backend-Roadmap/DNS-and-how-it-works/">DNS and how it works?</a></h6>
-                </div>
-            
-                <div class="article content>">
-                    <time class="is-text-small" datetime="2022-09-13T07:21:07.000Z" itemprop="datePublished">
-                        9월 13</time>
-                    <h6 class="title is-6"><a href="/2022/09/13/Backend-Roadmap/browsers-and-how-they-work/">Browsers and how they work?</a></h6>
-                </div>
-            
-            </div>
-        </div>
+        </span>
+    </div>
     
-    
+</article>
+
+
+
+
     </div>
 </section>
     <footer class="footer">

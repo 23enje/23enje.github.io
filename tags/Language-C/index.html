@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>NULL 포인터 &#39;value&#39;를 역참조하고 있습니다. [C Language] - 23enje&#39;s blog</title>
+<title>태그: Language, C - 23enje&#39;s blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -83,12 +83,20 @@
     </div>
 </nav>
 
-    <section class="section">
+    <section class="section section-heading">
     <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
+        <div class="content">
+            <h5>#Language, C</h5>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            NULL 포인터 &#39;value&#39;를 역참조하고 있습니다. [C Language]
+            <a href="/2022/09/29/ProgrammingLanguage/C/C6011/" itemprop="url">NULL 포인터 &#39;value&#39;를 역참조하고 있습니다. [C Language]</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -102,46 +110,27 @@
         <span class="column is-narrow">
             
             
-            2분 소요 (약 229 단어)
+            2분 소요 (약 230 단어)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>경고 C6011: NULL 포인터 &lt;이름 역참조&gt;</p>
-<span id="more"></span>
-
-<h2 id="lt-문제발생-gt"><a href="#lt-문제발생-gt" class="headerlink" title="<문제발생>"></a>&lt;문제발생&gt;</h2><p>H 포인터 변수에 메모리를 할당 후 포인터에 역참조 오류가 발생하였습니다.</p>
-<img src="/gallery/C6011_example.png" class="">
-
-<h2 id="lt-원인-gt"><a href="#lt-원인-gt" class="headerlink" title="<원인>"></a>&lt;원인&gt;</h2><p>malloc 함수는 시스템에 메모리가 부족할 경우 메모리 할당에 실패하여 NULL을 반환하게 됩니다. 따라서 malloc 함수가 NULL을 반환하는 경우 프로그램적으로 오류가 발생하게 되므로 사전에 경고해줍니다.</p>
-<h2 id="lt-해결-gt"><a href="#lt-해결-gt" class="headerlink" title="<해결>"></a>&lt;해결&gt;</h2><p>NULL이 발생하는 상황을 조건을 넣어 해결해줍니다.</p>
-<script src="https://gist.github.com/23enje/832c69b5b4e9c2a2d399a279f2a25dc5.js"></script>
-<p>다음과 같은 코드에서 조건을 추가하여</p>
-<script src="https://gist.github.com/23enje/37baa73cde1c64b059aa3b6dca993ea5.js"></script>
-<p>다음과 같이 H 포인터 변수에 NULL이 들어올 경우 -1을 반환해 함수를 종료함으로써 해결하였습니다.</p>
-<p>참고:<br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/cpp/code-quality/c6011?view=msvc-170">https://learn.microsoft.com/en-us/cpp/code-quality/c6011?view=msvc-170</a><br><a target="_blank" rel="noopener" href="https://m.blog.naver.com/tipsware/221712079963">https://m.blog.naver.com/tipsware/221712079963</a></p>
-</body></html>
+        <html><head></head><body><p>경고 C6011: NULL 포인터 &lt;이름 역참조&gt;</p></body></html>
+        <p class="article-more-link">
+            <a href="/2022/09/29/ProgrammingLanguage/C/C6011/#more">더 읽기</a>
+        </p>
     
     </div>
     
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop  article-nav-next">
-            
-            <a href="/2022/09/21/Backend-Roadmap/what-is-hosting/">What is hosting?</a>
-            
-        </span>
-    </div>
     
 </article>
 
 
 
 
+    
+    
     </div>
 </section>
     <footer class="footer">
