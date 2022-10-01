@@ -38,6 +38,13 @@
 <script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-coding.css" rel="stylesheet">
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+
+
+
+
 
 
 
@@ -102,7 +109,7 @@
         <span class="column is-narrow">
             
             
-            7분 소요 (약 1021 단어)
+            9분 소요 (약 1324 단어)
         </span>
         
     </div>
@@ -118,38 +125,46 @@
 <br><br>
 포인터 변수 b는 정수형 변수의 주소값을 저장할 수 있는 정수형 포인터 변수로 선언되었습니다. 그러나 어떤 정수형 변수의 주소값을 저장할지 할당이 없었기 때문에 비어있는 상태입니다. 따라서 주소값을 할당하기 위해 다음과 같이 선언합니다.
 <br><br>
-<p align="center"><img src="/gallery/Pointer_mean3.drawio.png"></p>
+<p align="center"><img src="/gallery/Pointer_mean2.drawio.png"></p>
 포인터 변수에 주소값을 할당하기 위해서 주소 연산자라고 부르는 '&amp;'을 사용합니다. '&amp;a'는 변수 a의 메모리 주소를 결과값으로 받는다는 의미입니다.
 <br><br>
 주소 연산자를 포함하여 아래와 같이 다시 정리하겠습니다.
 <br><br>
-<p align="center"><img src="/gallery/Pointer_mean2.drawio.png"></p>
-정수형 변수 a가 선언되면서 정수값 100이 할당됩니다. 즉, 변수 a의 이름으로 메모리의 일정 영역을 할당받는것을 의미하며 메모리 주소가 부여됩니다. 그에 따라 '&amp;a'에 주소값을 반환합니다.
+<p align="center"><img src="/gallery/Pointer_mean3.drawio.png"></p>
+정수형 변수 a가 선언되면서 정수값 100이 할당됩니다. 즉, 변수 a의 이름으로 메모리의 일정 영역을 할당받는것을 의미하며 메모리 주소가 부여됩니다. 그런 다음 '&amp;a'를 수행하면 a의 주소값을 반환합니다.
 <br><br>
 다음은 변수 a가 선언되어 메모리의 저장 위치를 할당받았다고 가정하겠습니다. 변수 a가 메모리의 저장 위치를 할당받으면서 메모리 주소는 FF00(16진수), 포인터 변수 b의 메모리 주소는 FF01(16진수)로 할당되었습니다.
 <br><br>
 <p align="center"><img src="/gallery/Pointer_mean4.drawio.png"></p>
-정수형 변수 a는 FF00 주소에 100이 저장됩니다. 그리고 정수형 포인터 변수 b는 FF01번지 메모리 영역에 할당 받고 명령어 'b=&amp;a'를 수행합니다. 그러면 먼저 '&amp;a'를 수행하여 FF00 번지를 반환하고 그 반환된 값은 정수형 포인터 변수 b의 메모리 영역에 저장됩니다.
+정수형 변수 a는 FF00 주소에 100이 저장됩니다. 그리고 정수형 포인터 변수 b는 FF01번지 메모리 영역에 할당 받고 명령어 'b=&amp;a'를 수행합니다. 그러면 '&amp;a'를 수행하여 FF00 번지를 반환하고 그 반환된 값은 정수형 포인터 변수 b의 메모리 영역에 저장됩니다.
+<br><br>
+포인터는 저장된 주소값을 가리키지만, 그 반대로 주소를 통해 데이터를 접근할 수 있는 방법도 있습니다. 
+<br><br>
 <p align="center"><img src="/gallery/Pointer_mean5.drawio.png"></p>
-이러한 과정은 위와 같이 추상화하여 그릴 수 있습니다. 화살표를 링크라 읽으면 되고, 링크는 포인터 변수의 역할이라 생각하면 됩니다.
+주소를 통해 데이터를 접근할 수 있는 단항 연산자 '*b'의 역할을 역참조라 하며 '*'를 역참조 연산자라 부릅니다.
+<p align="center"><img src="/gallery/Pointer_mean6.drawio.png"></p>
+단항 연산자 '*b'는 b의 저장 영역에서 주소값 'FF00'을 추출하고, 추출된 'FF00'의 주소를 찾아갑니다. 그리고 주소번지 'FF00'에 저장된 값인 '100'을 반환하여 최종적으로 '100'의 값을 저장합니다. 역참조는 값을 저장할뿐만 아니라 직접 바꿀수도 있습니다. 위의 예제처럼 '*b = 150'을 수행하여 '150'을 반환시키면 변수 a의 값은 '150'으로 수정됩니다.
+<br><br>
+<p align="center"><img src="/gallery/Pointer_mean7.drawio.png"></p>
+이러한 포인터 변수의 과정들은 프로그래머가 위와 같이 추상화하여 그릴 수 있습니다. 화살표를 링크라 읽으면 되고, 링크는 포인터 변수의 역할이라 생각하면 됩니다.
 
-<h2 id="lt-응용-gt"><a href="#lt-응용-gt" class="headerlink" title="<응용>"></a>&lt;응용&gt;</h2><p align="center"><script src="https://gist.github.com/23enje/90d386c14e595c8f6088201668fe0f87.js"></script></p>
-위와 같은 출력문을 이용해 포인터 변수에 대해 정리하겠습니다.
+<h2 id="lt-응용-gt"><a href="#lt-응용-gt" class="headerlink" title="<응용>"></a>&lt;응용&gt;</h2><p>아래와 같은 소스코드를 작성하여 포인터 변수에 대해 최종적으로 정리하겠습니다.</p>
+<p align="center"><script src="https://gist.github.com/23enje/90d386c14e595c8f6088201668fe0f87.js"></script></p>
+변수 a에 '231'을 저장합니다. 그리고 포인터 변수 p_a에 '&amp;a'를 사용하여 변수 a의 주소값을 저장하며 단항 연산자 '*p_a'는 p_a에 저장되어 있는 주소값이 가리키는 값을 반환해줍니다. 또한 반환된 값을 다른 값으로 바꿀수 있기 때문에 주소값이 가리키는 메모리 영역을 찾아가서, 그 메모리 영역에 '521'을 저장하여 변수 a의 값이 '521'로 바뀌게됩니다.
 <br><br>
-변수 a의 값은 변수 이름을 이용해서 접근하며, 'a' 이름으로 할당된 메모리 영역에 저장된 값에 접근합니다.
+결론적으로 첫 번째, 두 번째 출력문의 결과는 '521'이 됩니다.
 <br><br>
-따라서 첫 번째 출력문의 결과는 'a is 100' 입니다.
+<p align="center"><img src="/gallery/Pointer_api1.drawio.png"></p>
+소스코드의 최종 출력 결과문은 다음과 같습니다.
+<p align="center"><img src="/gallery/Pointer_api2.drawio.png"></p>
+이러한 과정을 다시 한번 추상화하면 다음과 같이 그릴 수 있으며 프로그래머는 변수 a와 포인터 변수 b의 주소값을 몰라도 추상화된 모습만을 생각하여 프로그램을 작성하면 됩니다.
 <br><br>
-a의 주소값이 FF00(16진수)이라 하면, 포인터 변수 b가 저장하는 값은 주소값 'FF00'입니다. 그러면 단항 연산자 '*b'는 b의 저장 영역에서 주소값 'FF00'을 추출하고, 추출된 'FF00'의 주소를 찾아갑니다. 그리고 주소번지 'FF00'에 저장된 값인 '100'을 반환합니다. 이처럼 단항 연산자 '*b'의 역할을 역참조라 하며 '*'를 역참조 연산자라 부릅니다.
-<br><br>
-결론적으로 두 번째 출력문의 결과는 'b is 100'이 됩니다.
-<br><br>
-마지막으로 포인터 변수와 역참조에 대해 정리하겠습니다.
-<br><br>
-<p align="center"><img src="/gallery/Pointer_sol1.png"></p>
+참고:
 
-<p align="center"><img src="/gallery/Pointer_api3.drawio.png"></p>
-
+<ul>
+<li>강태원, 정광식, 『자료구조』, 한국방송통신대학교출판문화원(2017)</li>
+<li>해시넷, “역참조”, <a target="_blank" rel="noopener" href="http://wiki.hash.kr/index.php/%EC%97%AD%EC%B0%B8%EC%A1%B0">http://wiki.hash.kr/index.php/%EC%97%AD%EC%B0%B8%EC%A1%B0</a></li>
+</ul>
 </body></html>
     
     </div>
